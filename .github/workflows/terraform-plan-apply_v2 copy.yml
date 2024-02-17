@@ -62,7 +62,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
           name: tfplan
-          path: ./artifacts #tfplan.out
+          path: tfplan.out
 
     #Terraform Apply
     - name: Apply Terraform Plan
