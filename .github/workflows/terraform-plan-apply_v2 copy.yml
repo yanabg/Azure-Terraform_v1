@@ -1,6 +1,7 @@
 name: 'Terraform Plan APply'
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
 
@@ -62,8 +63,8 @@ jobs:
       uses: actions/download-artifact@v2
       with:
           name: tfplan
-          path: tfplan.out
+         # path: tfplan.out
 
     #Terraform Apply
     - name: Apply Terraform Plan
-      run: terraform apply -auto-approve tfplan.out
+      run: terraform apply -auto-approve tfplan
